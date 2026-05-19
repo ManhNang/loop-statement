@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Loops</h2>
+    <p id="bai-1"></p>
+    <p id="bai-2"></p>
+    <script>
+        let text = "";
+        for(let i = 0; i < 5; i++){
+            text += "The number is " + i + "<br>";
+        }
+        document.getElementById("bai-1").innerHTML = text;
+
+        let num = prompt("Enter your number: ", "1");
+        let total = 0;
+
+        for(let i = 1; i <= Number(num); i++){
+            total += i;
+        }
+
+        document.getElementById("bai-2").innerText = `Sum of elements from 1 to ${num}: ${total}`;
+    </script>
+</body>
+</html>
