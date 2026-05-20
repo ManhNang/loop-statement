@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numbers = parseInt(prompt("Nhập số lượng số nguyên tố: ", 0));
+        let count = 0;
+        let n = 1;
+
+        while(count < numbers){
+            n++;
+            if(n > 3){
+                if(n % 2 == 0 || n % 3 == 0){
+                    continue;
+                }
+            }
+
+            document.writeln(`${n} là số nguyên tố <br>`);
+            count++;
+        }
+    </script>
+</body>
+</html>
