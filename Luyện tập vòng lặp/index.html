@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Bài Tập JavaScript</title>
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-color: #1f2937;
+            --border-color: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #111827;
+            margin-top: 0;
+        }
+
+        /* Menu Styles */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        @media (max-width: 500px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .menu-btn {
+            background: #f9fafb;
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-color);
+            transition: all 0.2s ease;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.1);
+        }
+
+        .menu-btn::before {
+            content: "📝";
+            margin-right: 12px;
+            font-size: 20px;
+        }
+
+        /* Exercise Section Styles */
+        .exercise-section {
+            display: none;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background-color: #9ca3af;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #7b808a;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            color: #4b5563;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+
+        input:focus, select:focus {
+            outline: 2px solid var(--primary-color);
+        }
+
+        /* Output Area */
+        .output-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: #1e293b;
+            color: #f8fafc;
+            border-radius: 8px;
+            min-height: 40px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre;
+            overflow-x: auto;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="main-menu">
+        <h1>Danh Sách Bài Tập</h1>
+        <div class="menu-grid">
+            <button class="menu-btn" onclick="openExercise('ex1')">Bài 1: In dãy Fibonacci</button>
+            <button class="menu-btn" onclick="openExercise('ex2')">Bài 2: Tính giai thừa</button>
+            <button class="menu-btn" onclick="openExercise('ex3')">Bài 3: In tam giác vuông</button>
+            <button class="menu-btn" onclick="openExercise('ex4')">Bài 4: In hình chữ nhật</button>
+            <button class="menu-btn" onclick="openExercise('ex5')">Bài 5: Tính lãi ngân hàng</button>
+            <button class="menu-btn" onclick="openExercise('ex6')">Bài 6: In hình trái tim</button>
+        </div>
+    </div>
+
+    <div id="ex1" class="exercise-section">
+        <h2>Bài 1: In dãy Fibonacci</h2>
+        <div class="form-group">
+            <label for="fib-input">Nhập số lượng số cần in (n):</label>
+            <input type="number" id="fib-input" min="1" value="10">
+        </div>
+        <div class="btn-container">
+            <button class="btn btn-primary" onclick="runFibonacci()">Chạy</button>
+            <button class="btn btn-secondary" onclick="backToMenu()">Quay lại Menu</button>
+        </div>
+        <div id="fib-output" class="output-box">Kết quả sẽ hiển thị ở đây...</div>
+    </div>
+
+    <div id="ex2" class="exercise-section">
+        <h2>Bài 2: Tính giai thừa số nguyên dương</h2>
+        <div class="form-group">
+            <label for="fact-input">Nhập số nguyên dương (n):</label>
+            <input type="number" id="fact-input" min="0" value="5">
+        </div>
+        <div class="btn-container">
+            <button class="btn btn-primary" onclick="runFactorial()">Tính</button>
+            <button class="btn btn-secondary" onclick="backToMenu()">Quay lại Menu</button>
+        </div>
+        <div id="fact-output" class="output-box">Kết quả sẽ hiển thị ở đây...</div>
+    </div>
+
+    <div id="ex3" class="exercise-section">
+        <h2>Bài 3: In tam giác vuông</h2>
+        <div class="form-group">
+            <label for="tri-size">Chiều cao tam giác:</label>
+            <input type="number" id="tri-size" min="1" value="5">
+        </div>
+        <div class="form-group">
+            <label for="tri-type">Vị trí góc vuông:</label>
+            <select id="tri-type">
+                <option value="bl">Dưới - Trái (Bottom-Left)</option>
+                <option value="tl">Trên - Trái (Top-Left)</option>
+                <option value="br">Dưới - Phải (Bottom-Right)</option>
+                <option value="tr">Trên - Phải (Top-Right)</option>
+            </select>
+        </div>
+        <div class="btn-container">
+            <button class="btn btn-primary" onclick="runTriangle()">In hình</button>
+            <button class="btn btn-secondary" onclick="backToMenu()">Quay lại Menu</button>
+        </div>
+        <div id="tri-output" class="output-box">Kết quả sẽ hiển thị ở đây...</div>
+    </div>
+
+    <div id="ex4" class="exercise-section">
+        <h2>Bài 4: In hình chữ nhật</h2>
+        <div class="form-group">
+            <label for="rect-width">Chiều rộng (Cột):</label>
+            <input type="number" id="rect-width" min="1" value="7">
+        </div>
+        <div class="form-group">
+            <label for="rect-height">Chiều cao (Hàng):</label>
+            <input type="number" id="rect-height" min="1" value="4">
+        </div>
+        <div class="form-group">
+            <label for="rect-style">Kiểu hình:</label>
+            <select id="rect-style">
+                <option value="solid">Đặc</option>
+                <option value="hollow">Rỗng</option>
+            </select>
+        </div>
+        <div class="btn-container">
+            <button class="btn btn-primary" onclick="runRectangle()">In hình</button>
+            <button class="btn btn-secondary" onclick="backToMenu()">Quay lại Menu</button>
+        </div>
+        <div id="rect-output" class="output-box">Kết quả sẽ hiển thị ở đây...</div>
+    </div>
+
+    <div id="ex5" class="exercise-section">
+        <h2>Bài 5: Tính lãi ngân hàng (Lãi kép)</h2>
+        <div class="form-group">
+            <label for="bank-principal">Số tiền ban đầu (VNĐ):</label>
+            <input type="number" id="bank-principal" min="0" value="10000000">
+        </div>
+        <div class="form-group">
+            <label for="bank-months">Số tháng vay/gửi:</label>
+            <input type="number" id="bank-months" min="1" value="12">
+        </div>
+        <div class="form-group">
+            <label for="bank-rate">Lãi suất hàng tháng (% / tháng):</label>
+            <input type="number" id="bank-rate" step="0.1" min="0" value="0.5">
+        </div>
+        <div class="btn-container">
+            <button class="btn btn-primary" onclick="runInterest()">Tính toán</button>
+            <button class="btn btn-secondary" onclick="backToMenu()">Quay lại Menu</button>
+        </div>
+        <div id="bank-output" class="output-box">Kết quả sẽ hiển thị ở đây...</div>
+    </div>
+
+    <div id="ex6" class="exercise-section">
+        <h2>Bài 6: In hình trái tim</h2>
+        <p style="color:#6b7280; font-size:14px; margin-top:-5px;">Hình trái tim được dựng bằng thuật toán đồ họa ký tự tự động định hình siêu đẹp.</p>
+        <div class="btn-container">
+            <button class="btn btn-primary" onclick="runHeart()">In trái tim</button>
+            <button class="btn btn-secondary" onclick="backToMenu()">Quay lại Menu</button>
+        </div>
+        <div id="heart-output" class="output-box" style="text-align: center; font-weight: bold; color: #ff4d4d;">Kết quả sẽ hiển thị ở đây...</div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
