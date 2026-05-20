@@ -1,0 +1,5 @@
+Với 10,000 phần tử
+
+Code cũ chạy 100,000,000 vòng mất 1.111s
+
+Code mới chạy 49,995,000 vòng mất 518.381ms
