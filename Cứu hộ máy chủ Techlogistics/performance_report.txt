@@ -1,0 +1,5 @@
+Câu lệnh cũ:
+36 bước, 4.802 ms
+
+Câu lệnh mới:
+15 bước, 4.247ms
