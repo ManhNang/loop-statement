@@ -1,0 +1,204 @@
+THUẬT TOÁN TÌM KIẾM (Search)
+{
+  id: 'P035',
+  name: 'Danh Van II',
+  status: 'stable',
+  age: 48,
+  heartRate: 83
+}
+
+THUẬT TOÁN LỌC (Filter)
+[
+  {
+    id: 'P002',
+    name: 'Tran Thi B',
+    status: 'critical',
+    age: 60,
+    heartRate: 130
+  },
+  {
+    id: 'P004',
+    name: 'Pham Thi D',
+    status: 'critical',
+    age: 72,
+    heartRate: 45
+  },
+  {
+    id: 'P002',
+    name: 'Tran Thi B',
+    status: 'critical',
+    age: 60,
+    heartRate: 130
+  },
+  {
+    id: 'P004',
+    name: 'Pham Thi D',
+    status: 'critical',
+    age: 72,
+    heartRate: 45
+  },
+  {
+    id: 'P006',
+    name: 'Vu Thi F',
+    status: 'critical',
+    age: 65,
+    heartRate: null
+  },
+  {
+    id: 'P008',
+    name: 'Do Thi H',
+    status: 'critical',
+    age: 80,
+    heartRate: 140
+  },
+  {
+    id: 'P010',
+    name: 'Dang Thi J',
+    status: 'critical',
+    age: 55,
+    heartRate: 115
+  },
+  {
+    id: 'P012',
+    name: 'Duong Thi L',
+    status: 'critical',
+    age: 68,
+    heartRate: 125
+  },
+  {
+    id: 'P014',
+    name: 'Dinh Thi N',
+    status: 'critical',
+    age: 74,
+    heartRate: null
+  },
+  {
+    id: 'P016',
+    name: 'Phung Thi P',
+    status: 'critical',
+    age: 61,
+    heartRate: 135
+  },
+  {
+    id: 'P018',
+    name: 'Trinh Thi R',
+    status: 'critical',
+    age: 83,
+    heartRate: 50
+  },
+  {
+    id: 'P020',
+    name: 'Tang Thi T',
+    status: 'critical',
+    age: 57,
+    heartRate: 122
+  },
+  {
+    id: 'P022',
+    name: 'Quach Thi V',
+    status: 'critical',
+    age: 66,
+    heartRate: 118
+  },
+  {
+    id: 'P024',
+    name: 'Trieu Thi X',
+    status: 'critical',
+    age: 77,
+    heartRate: 40
+  },
+  {
+    id: 'P026',
+    name: 'Kim Thi Z',
+    status: 'critical',
+    age: 63,
+    heartRate: null
+  },
+  {
+    id: 'P028',
+    name: 'Nong Thi BB',
+    status: 'critical',
+    age: 85,
+    heartRate: 145
+  },
+  {
+    id: 'P030',
+    name: 'Van Thi DD',
+    status: 'critical',
+    age: 59,
+    heartRate: 110
+  },
+  {
+    id: 'P032',
+    name: 'Kieu Thi FF',
+    status: 'critical',
+    age: 69,
+    heartRate: 128
+  },
+  {
+    id: 'P034',
+    name: 'Kha Thi HH',
+    status: 'critical',
+    age: 71,
+    heartRate: null
+  },
+  {
+    id: 'P036',
+    name: 'Hao Thi JJ',
+    status: 'critical',
+    age: 62,
+    heartRate: 132
+  },
+  {
+    id: 'P038',
+    name: 'Chu Thi LL',
+    status: 'critical',
+    age: 81,
+    heartRate: 48
+  },
+  {
+    id: 'P040',
+    name: 'Trang Thi NN',
+    status: 'critical',
+    age: 56,
+    heartRate: 119
+  },
+  {
+    id: 'P042',
+    name: 'Doc Thi PP',
+    status: 'critical',
+    age: 67,
+    heartRate: null
+  },
+  {
+    id: 'P044',
+    name: 'Uong Thi RR',
+    status: 'critical',
+    age: 79,
+    heartRate: 138
+  },
+  {
+    id: 'P046',
+    name: 'Nha Thi TT',
+    status: 'critical',
+    age: 64,
+    heartRate: 121
+  },
+  {
+    id: 'P048',
+    name: 'Co Thi VV',
+    status: 'critical',
+    age: 82,
+    heartRate: 42
+  },
+  {
+    id: 'P050',
+    name: 'Bao Thi XX',
+    status: 'critical',
+    age: 58,
+    heartRate: 116
+  }
+]
+
+THUẬT TOÁN THỐNG KÊ (Aggregate)
+{ totalHeartRate: 2294, criticalCount: 27 }
