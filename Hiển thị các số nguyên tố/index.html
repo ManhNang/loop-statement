@@ -9,18 +9,24 @@
     <script>
         let numbers = parseInt(prompt("Nhập số lượng số nguyên tố: ", 0));
         let count = 0;
-        let n = 1;
+        let n = 2;
 
-        while(count < numbers){
-            n++;
-            if(n > 3){
-                if(n % 2 == 0 || n % 3 == 0){
-                    continue;
+        function isPrime(num){
+            if(num < 2) return false;
+            for(let i = 2; i <= Math.sqrt(num); i++){
+                if(num % i === 0){
+                    return false;
                 }
             }
+            return true;
+        }
 
-            document.writeln(`${n} là số nguyên tố <br>`);
-            count++;
+        while(count < numbers){
+            if(isPrime(n)){
+                document.writeln(`${n} là số nguyên tố <br>`);
+                count++;
+            }
+            n++;
         }
     </script>
 </body>
